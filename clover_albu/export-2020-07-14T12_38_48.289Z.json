@@ -1,0 +1,122 @@
+[
+  {
+    "ID": "ckbi0az8vcely0805a6dd86tr",
+    "DataRow ID": "ckbax0u3pawc10bm2ewbza9aj",
+    "Labeled Data": "https://storage.labelbox.com/ckb7qgszt9kes07143czkmmcw%2Fd85eb358-b373-db01-350b-af7525fa6d52-IMG_0246.JPG?Expires=1595939928302&KeyName=labelbox-assets-key-1&Signature=ELnxK3T7MhsZ9Xm7f4nYsbR_cAQ",
+    "Label": {
+      "objects": [
+        {
+          "featureId": "ckbguaqrc00vd0yci25vpdwaj",
+          "schemaId": "ckbaxmqut0oyy0y93eqkw07yj",
+          "title": "Clover",
+          "value": "clover",
+          "color": "#2A00FF",
+          "instanceURI": "https://api.labelbox.com/masks/feature/ckbguaqrc00vd0yci25vpdwaj?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJjazl3enp1dmp6ZmtkMGIzMHNhemVrajR1Iiwib3JnYW5pemF0aW9uSWQiOiJja2I3cWdzenQ5a2VzMDcxNDNjemttbWN3IiwiaWF0IjoxNTk0NzMwMzI4LCJleHAiOjE1OTczMjIzMjh9.Cr6fW8LmKj5u61Vr6wg_aZLS_Z0dZIdeWoaPQ6cRzYQ"
+        }
+      ],
+      "classifications": []
+    },
+    "Created By": "18708483@students.lincoln.ac.uk",
+    "Project Name": "Clover_Red_Britta",
+    "Created At": "2020-06-16T14:13:11.000Z",
+    "Updated At": "2020-06-16T14:14:02.000Z",
+    "Seconds to Label": 11528.732,
+    "External ID": "IMG_0246.JPG",
+    "Agreement": -1,
+    "Benchmark Agreement": -1,
+    "Benchmark ID": null,
+    "Dataset Name": "Red_Britta",
+    "Reviews": [],
+    "View Label": "https://editor.labelbox.com?project=ckbaxlp1ydxvj0742859h1xrs&label=ckbi0az8vcely0805a6dd86tr"
+  },
+  {
+    "ID": "ckbxn9a2e60nx0zcnb74ugbo0",
+    "DataRow ID": "ckbax0u3pawcd0bm274xj2nwp",
+    "Labeled Data": "https://storage.labelbox.com/ckb7qgszt9kes07143czkmmcw%2F43118774-da18-9edf-c91e-e4cb6a8096ac-IMG_0257.JPG?Expires=1595939928302&KeyName=labelbox-assets-key-1&Signature=ft3fXUf9YIwI9hFlnOeHyDOOhEw",
+    "Label": {
+      "objects": [
+        {
+          "featureId": "ckbku3kh316tg0y6h76aud0kz",
+          "schemaId": "ckbaxmqut0oyy0y93eqkw07yj",
+          "title": "Clover",
+          "value": "clover",
+          "color": "#2A00FF",
+          "instanceURI": "https://api.labelbox.com/masks/feature/ckbku3kh316tg0y6h76aud0kz?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJjazl3enp1dmp6ZmtkMGIzMHNhemVrajR1Iiwib3JnYW5pemF0aW9uSWQiOiJja2I3cWdzenQ5a2VzMDcxNDNjemttbWN3IiwiaWF0IjoxNTk0NzMwMzI4LCJleHAiOjE1OTczMjIzMjh9.Cr6fW8LmKj5u61Vr6wg_aZLS_Z0dZIdeWoaPQ6cRzYQ"
+        }
+      ],
+      "classifications": []
+    },
+    "Created By": "18708483@students.lincoln.ac.uk",
+    "Project Name": "Clover_Red_Britta",
+    "Created At": "2020-06-27T12:52:16.000Z",
+    "Updated At": "2020-06-27T12:54:37.000Z",
+    "Seconds to Label": 34089.85699999997,
+    "External ID": "IMG_0257.JPG",
+    "Agreement": -1,
+    "Benchmark Agreement": -1,
+    "Benchmark ID": null,
+    "Dataset Name": "Red_Britta",
+    "Reviews": [],
+    "View Label": "https://editor.labelbox.com?project=ckbaxlp1ydxvj0742859h1xrs&label=ckbxn9a2e60nx0zcnb74ugbo0"
+  },
+  {
+    "ID": "ckc0qv6xn3ihw0yag1j4952kf",
+    "DataRow ID": "ckbax0u3pawcp0bm2d57oflsl",
+    "Labeled Data": "https://storage.labelbox.com/ckb7qgszt9kes07143czkmmcw%2F036fa4fd-7dc3-f8db-2ed3-91d230fc82b1-IMG_0316.JPG?Expires=1595939928303&KeyName=labelbox-assets-key-1&Signature=D1LFCArqLo3F7NQCoJUMM9271OE",
+    "Label": {
+      "objects": [
+        {
+          "featureId": "ckbzcd9ul2iz20y8o9bdsaq81",
+          "schemaId": "ckbaxmqut0oyy0y93eqkw07yj",
+          "title": "Clover",
+          "value": "clover",
+          "color": "#2A00FF",
+          "instanceURI": "https://api.labelbox.com/masks/feature/ckbzcd9ul2iz20y8o9bdsaq81?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJjazl3enp1dmp6ZmtkMGIzMHNhemVrajR1Iiwib3JnYW5pemF0aW9uSWQiOiJja2I3cWdzenQ5a2VzMDcxNDNjemttbWN3IiwiaWF0IjoxNTk0NzMwMzI4LCJleHAiOjE1OTczMjIzMjh9.Cr6fW8LmKj5u61Vr6wg_aZLS_Z0dZIdeWoaPQ6cRzYQ"
+        }
+      ],
+      "classifications": []
+    },
+    "Created By": "18708483@students.lincoln.ac.uk",
+    "Project Name": "Clover_Red_Britta",
+    "Created At": "2020-06-29T16:56:35.000Z",
+    "Updated At": "2020-07-07T14:18:04.000Z",
+    "Seconds to Label": 16139.929,
+    "External ID": "IMG_0316.JPG",
+    "Agreement": -1,
+    "Benchmark Agreement": -1,
+    "Benchmark ID": null,
+    "Dataset Name": "Red_Britta",
+    "Reviews": [],
+    "View Label": "https://editor.labelbox.com?project=ckbaxlp1ydxvj0742859h1xrs&label=ckc0qv6xn3ihw0yag1j4952kf"
+  },
+  {
+    "ID": "ckckl35yp3n430ya92uvkbjh9",
+    "DataRow ID": "ckbax0u3pawd10bm2fr6ogwb8",
+    "Labeled Data": "https://storage.labelbox.com/ckb7qgszt9kes07143czkmmcw%2Fc53b2cb1-b813-b33e-5c2a-02e13876c8c8-IMG_0374.JPG?Expires=1595939928303&KeyName=labelbox-assets-key-1&Signature=HfDPF7lP3dug99xyq3AsqE4w6wI",
+    "Label": {
+      "objects": [
+        {
+          "featureId": "ckcewr8ot3egz0z6g0t6bf2vi",
+          "schemaId": "ckbaxmqut0oyy0y93eqkw07yj",
+          "title": "Clover",
+          "value": "clover",
+          "color": "#2A00FF",
+          "instanceURI": "https://api.labelbox.com/masks/feature/ckcewr8ot3egz0z6g0t6bf2vi?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJjazl3enp1dmp6ZmtkMGIzMHNhemVrajR1Iiwib3JnYW5pemF0aW9uSWQiOiJja2I3cWdzenQ5a2VzMDcxNDNjemttbWN3IiwiaWF0IjoxNTk0NzMwMzI4LCJleHAiOjE1OTczMjIzMjh9.Cr6fW8LmKj5u61Vr6wg_aZLS_Z0dZIdeWoaPQ6cRzYQ"
+        }
+      ],
+      "classifications": []
+    },
+    "Created By": "18708483@students.lincoln.ac.uk",
+    "Project Name": "Clover_Red_Britta",
+    "Created At": "2020-07-13T14:10:13.000Z",
+    "Updated At": "2020-07-13T14:10:31.000Z",
+    "Seconds to Label": 13063.332,
+    "External ID": "IMG_0374.JPG",
+    "Agreement": -1,
+    "Benchmark Agreement": -1,
+    "Benchmark ID": null,
+    "Dataset Name": "Red_Britta",
+    "Reviews": [],
+    "View Label": "https://editor.labelbox.com?project=ckbaxlp1ydxvj0742859h1xrs&label=ckckl35yp3n430ya92uvkbjh9"
+  }
+]
