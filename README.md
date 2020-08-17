@@ -1,6 +1,8 @@
+Branching off of PANet for the application of grass and clover
+
 # PANet: Few-Shot Image Semantic Segmentation with Prototype Alignment
 
-This repo contains code for our ICCV 2019 paper [PANet: Few-Shot Image Semantic Segmentation with Prototype Alignment](https://arxiv.org/abs/1908.06391).
+This repo contains code based on the ICCV 2019 paper [PANet: Few-Shot Image Semantic Segmentation with Prototype Alignment](https://arxiv.org/abs/1908.06391).
 
 ### Dependencies
 
