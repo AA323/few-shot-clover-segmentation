@@ -81,8 +81,6 @@ def fewShot(paired_sample, n_ways, n_shots, cnt_query, coco=False):
         coco:
             MS COCO dataset
     """
-    print('### PAIRED SAMPLE ###')
-    print(paired_sample)
     ###### Compose the support and query image list ######
     cumsum_idx = np.cumsum([0,] + [n_shots + x for x in cnt_query])
 
@@ -94,11 +92,6 @@ def fewShot(paired_sample, n_ways, n_shots, cnt_query, coco=False):
                       for i in range(n_ways)]
     support_images_t = [[paired_sample[cumsum_idx[i] + j]['image_t'] for j in range(n_shots)]
                         for i in range(n_ways)]
-
-    print("### SUPPORT ###")
-    for thething in support_images:
-        for nextthing in thething:
-            print(nextthing.shape)
 
     # support image labels
     if coco:
@@ -155,8 +148,6 @@ def fewShot(paired_sample, n_ways, n_shots, cnt_query, coco=False):
             mask = torch.where(query_label == class_ids[idx - 1],
                                torch.ones_like(query_label),
                                torch.zeros_like(query_label))[None, ...]
-            print("### MASK ###")
-            print(mask)
             query_masks[i].append(mask)
 
 
@@ -208,9 +199,7 @@ def voc_fewshot(base_dir, split, transforms, to_tensor, labels, n_ways, n_shots,
         with open(os.path.join(voc._id_dir, voc.split,
                                'class{}.txt'.format(label)), 'r') as f:
             sub_ids.append(f.read().splitlines())
-
-    # Create sub-datasets and add class_id
-
+    # Create sub-datasets and add class_id attribute
     subsets = voc.subsets(sub_ids, [{'basic': {'class_id': cls_id}} for cls_id in labels])
 
     # Choose the classes of queries
@@ -222,7 +211,6 @@ def voc_fewshot(base_dir, split, transforms, to_tensor, labels, n_ways, n_shots,
                                 pair_based_transforms=[
                                     (fewShot, {'n_ways': n_ways, 'n_shots': n_shots,
                                                'cnt_query': cnt_query})])
-
     return paired_data
 
 

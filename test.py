@@ -83,12 +83,10 @@ def main(_run, _config, _log):
                 coco_cls_ids = dataset.datasets[0].dataset.coco.getCatIds()
             testloader = DataLoader(dataset, batch_size=_config['batch_size'], shuffle=False,
                                     num_workers=1, pin_memory=True, drop_last=False)
-
             _log.info(f"Total # of Data: {len(dataset)}")
 
+
             for sample_batched in tqdm.tqdm(testloader):
-                print('### sample ###')
-                print(sample_batched)
                 if _config['dataset'] == 'COCO':
                     label_ids = [coco_cls_ids.index(x) + 1 for x in sample_batched['class_ids']]
                 else:

@@ -61,7 +61,6 @@ class FewShotSeg(nn.Module):
             n_ways, n_shots, batch_size, -1, *fts_size)  # Wa x Sh x B x C x H' x W'
         qry_fts = img_fts[n_ways * n_shots * batch_size:].view(
             n_queries, batch_size, -1, *fts_size)   # N x B x C x H' x W'
-
         fore_mask = torch.stack([torch.stack(way, dim=0)
                                  for way in fore_mask], dim=0)  # Wa x Sh x B x H x W
         back_mask = torch.stack([torch.stack(way, dim=0)
@@ -122,7 +121,6 @@ class FewShotSeg(nn.Module):
             mask: binary mask, expect shape: 1 x H x W
         """
         fts = F.interpolate(fts, size=mask.shape[-2:], mode='bilinear')
-
         masked_fts = torch.sum(fts * mask[None, ...], dim=(2, 3)) \
             / (mask[None, ...].sum(dim=(2, 3)) + 1e-5) # 1 x C
         return masked_fts

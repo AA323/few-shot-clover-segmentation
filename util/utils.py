@@ -20,10 +20,6 @@ CLASS_LABELS = {
         2: set(range(1, 21)) - set(range(11, 16)),
         3: set(range(1, 21)) - set(range(16, 21)),
     },
-    # 'VOC': {
-    #     'all': set(range(1, 2)),
-    #     0: set(range(1, 2)),
-    # },
     'COCO': {
         'all': set(range(1, 81)),
         0: set(range(1, 81)) - set(range(1, 21)),
