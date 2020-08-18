@@ -25,7 +25,7 @@ def attrib_basic(_sample, class_id):
     return {'class_id': class_id}
 
 
-def getMask(label, scribble, class_id, class_ids):
+def getMask(label, class_id, class_ids):
     """
     Generate FG/BG mask from the segmentation mask
 
@@ -48,21 +48,21 @@ def getMask(label, scribble, class_id, class_ids):
         bg_mask[label == class_id] = 0
 
     # Scribble Mask
-    bg_scribble = scribble == 0
-    fg_scribble = torch.where((fg_mask == 1)
-                              & (scribble != 0)
-                              & (scribble != 255),
-                              scribble, torch.zeros_like(fg_mask))
-    scribble_cls_list = list(set(np.unique(fg_scribble)) - set([0,]))
-    if scribble_cls_list:  # Still need investigation
-        fg_scribble = fg_scribble == random.choice(scribble_cls_list).item()
-    else:
-        fg_scribble[:] = 0
+    # bg_scribble = scribble == 0
+    # fg_scribble = torch.where((fg_mask == 1)
+    #                           & (scribble != 0)
+    #                           & (scribble != 255),
+    #                           scribble, torch.zeros_like(fg_mask))
+    # scribble_cls_list = list(set(np.unique(fg_scribble)) - set([0,]))
+    # if scribble_cls_list:  # Still need investigation
+    #     fg_scribble = fg_scribble == random.choice(scribble_cls_list).item()
+    # else:
+    #     fg_scribble[:] = 0
 
     return {'fg_mask': fg_mask,
-            'bg_mask': bg_mask,
-            'fg_scribble': fg_scribble.long(),
-            'bg_scribble': bg_scribble.long()}
+            'bg_mask': bg_mask}
+            # 'fg_scribble': fg_scribble.long(),
+            # 'bg_scribble': bg_scribble.long()}
 
 
 def fewShot(paired_sample, n_ways, n_shots, cnt_query, coco=False):
@@ -100,8 +100,8 @@ def fewShot(paired_sample, n_ways, n_shots, cnt_query, coco=False):
     else:
         support_labels = [[paired_sample[cumsum_idx[i] + j]['label'] for j in range(n_shots)]
                           for i in range(n_ways)]
-    support_scribbles = [[paired_sample[cumsum_idx[i] + j]['scribble'] for j in range(n_shots)]
-                         for i in range(n_ways)]
+    # support_scribbles = [[paired_sample[cumsum_idx[i] + j]['scribble'] for j in range(n_shots)]
+    #                      for i in range(n_ways)]
     support_insts = [[paired_sample[cumsum_idx[i] + j]['inst'] for j in range(n_shots)]
                      for i in range(n_ways)]
 
@@ -124,8 +124,7 @@ def fewShot(paired_sample, n_ways, n_shots, cnt_query, coco=False):
 
 
     ###### Generate support image masks ######
-    support_mask = [[getMask(support_labels[way][shot], support_scribbles[way][shot],
-                             class_ids[way], class_ids)
+    support_mask = [[getMask(support_labels[way][shot], class_ids[way], class_ids)
                      for shot in range(n_shots)] for way in range(n_ways)]
 
 

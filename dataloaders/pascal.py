@@ -31,12 +31,12 @@ class VOC(BaseDataset):
         self._image_dir = os.path.join(self._base_dir, 'JPEGImages')
         self._label_dir = os.path.join(self._base_dir, 'SegmentationClassAug')
         self._inst_dir = os.path.join(self._base_dir, 'SegmentationObjectAug')
-        self._scribble_dir = os.path.join(self._base_dir, 'ScribbleAugAuto')
+        # self._scribble_dir = os.path.join(self._base_dir, 'ScribbleAugAuto')
         self._id_dir = os.path.join(self._base_dir, 'ImageSets', 'Segmentation')
         self.transforms = transforms
         self.to_tensor = to_tensor
 
-        with open(os.path.join(self._id_dir, f'{self.split}.txt'), 'r') as f:
+        with open(os.path.join(self._id_dir, f'{self.split}.txt').replace("\\", "/"), 'r') as f:
             self.ids = f.read().splitlines()
 
     def __len__(self):
@@ -48,11 +48,11 @@ class VOC(BaseDataset):
         image = Image.open(os.path.join(self._image_dir, f'{id_}.jpg'))
         semantic_mask = Image.open(os.path.join(self._label_dir, f'{id_}.png'))
         instance_mask = Image.open(os.path.join(self._inst_dir, f'{id_}.png'))
-        scribble_mask = Image.open(os.path.join(self._scribble_dir, f'{id_}.png'))
+        # scribble_mask = Image.open(os.path.join(self._scribble_dir, f'{id_}.png'))
         sample = {'image': image,
                   'label': semantic_mask,
-                  'inst': instance_mask,
-                  'scribble': scribble_mask}
+                  'inst': instance_mask}
+                  # 'scribble': scribble_mask}
 
         # Image-level transformation
         if self.transforms is not None:

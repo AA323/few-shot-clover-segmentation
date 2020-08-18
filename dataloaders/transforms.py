@@ -45,7 +45,8 @@ class Resize(object):
 
     def __call__(self, sample):
         img, label = sample['image'], sample['label']
-        inst, scribble = sample['inst'], sample['scribble']
+        # inst = sample['inst'], sample['scribble']
+        inst = sample['inst']
         img = tr_F.resize(img, self.size)
         if isinstance(label, dict):
             label = {catId: tr_F.resize(x, self.size, interpolation=Image.NEAREST)
@@ -53,32 +54,32 @@ class Resize(object):
         else:
             label = tr_F.resize(label, self.size, interpolation=Image.NEAREST)
         inst = tr_F.resize(inst, self.size, interpolation=Image.NEAREST)
-        scribble = tr_F.resize(scribble, self.size, interpolation=Image.ANTIALIAS)
+        # scribble = tr_F.resize(scribble, self.size, interpolation=Image.ANTIALIAS)
 
         sample['image'] = img
         sample['label'] = label
         sample['inst'] = inst
-        sample['scribble'] = scribble
+        # sample['scribble'] = scribble
         return sample
 
-class DilateScribble(object):
-    """
-    Dilate the scribble mask
-
-    Args:
-        size: window width
-    """
-    def __init__(self, size):
-        self.size = size
-
-    def __call__(self, sample):
-        scribble = sample['scribble']
-        dilated_scribble = Image.fromarray(
-            ndimage.minimum_filter(np.array(scribble), size=self.size))
-        dilated_scribble.putpalette(scribble.getpalette())
-
-        sample['scribble'] = dilated_scribble
-        return sample
+# class DilateScribble(object):
+#     """
+#     Dilate the scribble mask
+#
+#     Args:
+#         size: window width
+#     """
+#     def __init__(self, size):
+#         self.size = size
+#
+#     def __call__(self, sample):
+#         scribble = sample['scribble']
+#         dilated_scribble = Image.fromarray(
+#             ndimage.minimum_filter(np.array(scribble), size=self.size))
+#         dilated_scribble.putpalette(scribble.getpalette())
+#
+#         sample['scribble'] = dilated_scribble
+#         return sample
 
 class ToTensorNormalize(object):
     """
@@ -87,7 +88,8 @@ class ToTensorNormalize(object):
     """
     def __call__(self, sample):
         img, label = sample['image'], sample['label']
-        inst, scribble = sample['inst'], sample['scribble']
+        # inst, scribble = sample['inst'], sample['scribble']
+        inst = sample['inst']
         img = tr_F.to_tensor(img)
         img = tr_F.normalize(img, mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])
         if isinstance(label, dict):
@@ -96,10 +98,10 @@ class ToTensorNormalize(object):
         else:
             label = torch.Tensor(np.array(label)).long()
         inst = torch.Tensor(np.array(inst)).long()
-        scribble = torch.Tensor(np.array(scribble)).long()
+        # scribble = torch.Tensor(np.array(scribble)).long()
 
         sample['image'] = img
         sample['label'] = label
         sample['inst'] = inst
-        sample['scribble'] = scribble
+        # sample['scribble'] = scribble
         return sample
